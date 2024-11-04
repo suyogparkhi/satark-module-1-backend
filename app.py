@@ -25,5 +25,5 @@ def get_sentiment_score():
     return jsonify(response), 201
     
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=8080)
 
