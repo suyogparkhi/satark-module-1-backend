@@ -10,9 +10,6 @@ from utils import make_hard_prediction, make_soft_prediction
 
 app = FastAPI()
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
 class ReviewRequest(BaseModel):
     review: str
 
@@ -75,4 +72,4 @@ async def get_heatmap_data(request: HeatmapRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
